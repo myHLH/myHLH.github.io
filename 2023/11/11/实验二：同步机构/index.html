@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, myHLH的博客">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="myHLH的博客">
+    <meta name="description" content="实验二  同步机构学号：3210611037   姓名：韩力恒
+一、实验目的与要求模拟实现用同步机构避免并发进程执行时可能出现的与时间有关的错误。进程是程序在一个数据集合上运行的过程，进程是并发执行的，也即系统中的多个进程轮流地占用处理器运">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | myHLH的博客</title>
+    <title>myHLH的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -336,12 +337,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -384,21 +385,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    1985-10-26
+                    2023-11-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -418,19 +419,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="实验二-同步机构"><a href="#实验二-同步机构" class="headerlink" title="实验二  同步机构"></a>实验二  同步机构</h1><p><strong>学号：3210611037   姓名：韩力恒</strong></p>
+<h2 id="一、实验目的与要求"><a href="#一、实验目的与要求" class="headerlink" title="一、实验目的与要求"></a>一、实验目的与要求</h2><p>模拟实现用同步机构避免并发进程执行时可能出现的与时间有关的错误。<br>进程是程序在一个数据集合上运行的过程，进程是并发执行的，也即系统中的多个进程<br>轮流地占用处理器运行。<br>我们把若干个进程都能进行访问和修改地那些变量成为公共变量。由于进程是并发执<br>行的，所以，如果对进程访问公共变量不加限制，那么就会产生“与时间有关”的错误，即<br>进程执行后，所得到的结果与访问公共变量的时间有关。为了防止这类错误，系统必须要用<br>同步机构来控制进程对公共变量的访问。一般说，同步机构是由若干条原语——同步原语—<br>—所组成。本实验要求模拟 PV 操作同步机构的实现，模拟进程的并发执行，了解进程并发执行时同步机构的作用。 </p>
+<h2 id="二、程序中使用的数据结构及符号说明"><a href="#二、程序中使用的数据结构及符号说明" class="headerlink" title="二、程序中使用的数据结构及符号说明"></a>二、程序中使用的数据结构及符号说明</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定义信号量 */</span></span><br><span class="line"><span class="type">int</span> s1 = <span class="number">10</span>; <span class="comment">// 缓冲区大小为10</span></span><br><span class="line"><span class="type">int</span> s2 = <span class="number">0</span>; <span class="comment">// 初始消费者等待信号量为0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义进程控制块(PCB)结构体 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> {</span></span><br><span class="line">    <span class="type">char</span>* name;  <span class="comment">// 进程名</span></span><br><span class="line">    <span class="type">int</span> status;  <span class="comment">// 进程状态：0-运行态，1-就绪态，2-等待态，3-完成态</span></span><br><span class="line">    <span class="type">char</span>* wait;  <span class="comment">// 等待原因：等待信号量s1或s2</span></span><br><span class="line">    <span class="type">int</span> breakpoint;  <span class="comment">// 断点：进程的指令计数器</span></span><br><span class="line">} ProcessControlBlock;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义全局变量 */</span></span><br><span class="line"><span class="type">int</span> PC = <span class="number">0</span>; <span class="comment">// 指令计数器</span></span><br><span class="line"><span class="type">int</span> buffer[<span class="number">10</span>]; <span class="comment">// 缓冲区</span></span><br><span class="line"><span class="type">int</span> in = <span class="number">0</span>; <span class="comment">// 生产者将产品放置的位置</span></span><br><span class="line"><span class="type">int</span> out = <span class="number">0</span>; <span class="comment">// 消费者将产品取出的位置</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="三、流程图"><a href="#三、流程图" class="headerlink" title="三、流程图"></a>三、流程图</h2><p><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689757012044-83b901bc-6e29-46eb-9c2f-4eca26a7003b.png#averageHue=%23f9f8f8&amp;id=a1G8N&amp;originHeight=674&amp;originWidth=348&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="><br>初始化流程<br><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689757012398-9fde8606-7796-4625-8b0e-68a43ad6f551.png#averageHue=%23f9f8f8&amp;id=bx2kU&amp;originHeight=691&amp;originWidth=507&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="><br>处理器调度程序流程<br><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689757012712-32c9eeac-c43e-457c-b06e-7596fe2ea121.png#averageHue=%23fafafa&amp;id=zBiKw&amp;originHeight=827&amp;originWidth=570&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="><br>模拟处理器指令执行<br><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689757013012-1a1748c4-197a-4adb-8768-92162706acbf.png#averageHue=%23f9f9f9&amp;id=YYbCE&amp;originHeight=717&amp;originWidth=919&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="><br>模拟 PV 操作的执行</p>
+<h2 id="四、实验测试结果及结果分析"><a href="#四、实验测试结果及结果分析" class="headerlink" title="四、实验测试结果及结果分析"></a>四、实验测试结果及结果分析</h2><p>程序运行结果：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689757013339-a0b3554c-3416-42d9-bfcc-678099c145a4.png#averageHue=%231e1c1a&amp;id=PuJyg&amp;originHeight=791&amp;originWidth=580&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="><br><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689757013706-65469eb3-0061-4cd9-910e-a11a45291b0a.png#averageHue=%231d1b19&amp;id=zYxwv&amp;originHeight=851&amp;originWidth=592&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="></p>
+<p>结果分析：<br>该代码模拟了 PV 操作同步机构，并使用 PV 操作解决了生产者 - 消费者问题。<br>在代码中，我定义了信号量 <code>s1</code> 和 <code>s2</code>，分别表示缓冲区未满和消费者等待的信号量。生产者在将产品放入缓冲区时，需要先判断是否满了，如果满了，生产者就等待 <code>s1</code> 信号量。而消费者在从缓冲区中取出产品时，需要先判断是否为空，如果为空，消费者就等待 <code>s2</code> 信号量。<br>进程控制块(<code>ProcessControlBlock</code>)结构体是用于记录进程的状态、等待原因、断点等信息的。在生产者和消费者进程中，如果需要等待信号量，则需要将进程状态设为等待态(<code>2</code>)，并设置等待原因(<code>wait</code>)。如果进程完成，则将进程状态设为完成态(<code>3</code>)。<br>为了更好的模拟线程的处理方式，我使用了一个while循环来模拟多个进程的交替执行，每个进程在执行时会根据自己的状态来判断是否可以运行，如果不能运行，则切换为就绪态(<code>1</code>)。在处理器调度程序中，我使用了随机数来选择一个就绪进程占用处理器运行。</p>
+<h2 id="五、实验小结"><a href="#五、实验小结" class="headerlink" title="五、实验小结"></a>五、实验小结</h2><p>在本次实验中，我通过模拟生产者消费者问题，深入理解了同步机制的实现原理。在实现中需要考虑生产者和消费者之间的同步和互斥问题，避免资源竞争和死锁等问题的发生，从而确保程序正确执行。<br>通过本次实验，我深刻认识到同步机制的重要性，也更好地理解了PV操作的实现原理。在实际编程中，还需要根据具体场景选择合适的同步机制，保证程序的正确性和高效性。总的来说，通过本次实验让我更好地理解了操作系统中的同步机制和并发编程的基本原理，提高了我的编程能力。</p>
+<h2 id="源程序："><a href="#源程序：" class="headerlink" title="源程序："></a>源程序：</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;time.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义信号量 */</span></span><br><span class="line"><span class="type">int</span> s1 = <span class="number">10</span>; <span class="comment">// 缓冲区大小为10</span></span><br><span class="line"><span class="type">int</span> s2 = <span class="number">0</span>; <span class="comment">// 初始消费者等待信号量为0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义进程控制块(PCB)结构体 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> {</span></span><br><span class="line">    <span class="type">char</span>* name;  <span class="comment">// 进程名</span></span><br><span class="line">    <span class="type">int</span> status;  <span class="comment">// 进程状态：0-运行态，1-就绪态，2-等待态，3-完成态</span></span><br><span class="line">    <span class="type">char</span>* wait;  <span class="comment">// 等待原因：等待信号量s1或s2</span></span><br><span class="line">    <span class="type">int</span> breakpoint;  <span class="comment">// 断点：进程的指令计数器</span></span><br><span class="line">} ProcessControlBlock;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义全局变量 */</span></span><br><span class="line"><span class="type">int</span> PC = <span class="number">0</span>; <span class="comment">// 指令计数器</span></span><br><span class="line"><span class="type">int</span> buffer[<span class="number">10</span>]; <span class="comment">// 缓冲区</span></span><br><span class="line"><span class="type">int</span> in = <span class="number">0</span>; <span class="comment">// 生产者将产品放置的位置</span></span><br><span class="line"><span class="type">int</span> out = <span class="number">0</span>; <span class="comment">// 消费者将产品取出的位置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 定义生产者和消费者的指令集 */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">producer</span><span class="params">()</span> {</span><br><span class="line">    <span class="comment">// 如果缓冲区满了，生产者等待信号量s1</span></span><br><span class="line">    <span class="keyword">if</span> (s1 &lt;= <span class="number">0</span>) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"缓冲区已满，生产者等待中...\n"</span>);</span><br><span class="line">        <span class="comment">// 设置进程控制块(PCB)</span></span><br><span class="line">        ProcessControlBlock pcb = { <span class="string">"Producer"</span>, <span class="number">2</span>, <span class="string">"s1"</span>, PC };</span><br><span class="line">        <span class="comment">// 将进程控制块(PCB)加入等待队列</span></span><br><span class="line">        <span class="comment">// 这里我们暂时没有模拟等待队列，直接跳转到下一进程</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span> {</span><br><span class="line">        <span class="comment">// 从键盘读取一个字符，放入缓冲区中</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入一个字符: "</span>);</span><br><span class="line">        <span class="type">char</span> c = getchar();</span><br><span class="line">        getchar();<span class="comment">//读取掉回车</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"生产者将字符 %c 放到了缓冲区 buffer[%d]\n"</span>, c, in);</span><br><span class="line">        buffer[in] = c;</span><br><span class="line">        in = (in + <span class="number">1</span>) % <span class="number">10</span>;</span><br><span class="line">        s1--;</span><br><span class="line">        s2++; <span class="comment">// 消费者已可以从缓冲区中取出产品，所以消费者等待信号量s2加1</span></span><br><span class="line">        PC++;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">consumer</span><span class="params">()</span> {</span><br><span class="line">    <span class="comment">// 如果缓冲区为空，消费者等待信号量s2</span></span><br><span class="line">    <span class="keyword">if</span> (s2 &lt;= <span class="number">0</span>) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"缓冲区为空，消费者等待中...\n"</span>);</span><br><span class="line">        <span class="comment">// 设置进程控制块(PCB)</span></span><br><span class="line">        ProcessControlBlock pcb = { <span class="string">"Consumer"</span>, <span class="number">2</span>, <span class="string">"s2"</span>, PC };</span><br><span class="line">        <span class="comment">// 将进程控制块(PCB)加入等待队列</span></span><br><span class="line">        <span class="comment">// 这里我们暂时没有模拟等待队列，直接跳转到下一进程</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">else</span> {</span><br><span class="line">        <span class="comment">// 从缓冲区中取出产品并输出到控制台</span></span><br><span class="line">        <span class="type">char</span> c = (<span class="type">char</span>)buffer[out];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"消费者在缓冲区 buffer[%d] 中拿走了 %c\n"</span>, out, c);</span><br><span class="line">        out = (out + <span class="number">1</span>) % <span class="number">10</span>;</span><br><span class="line">        s1++;</span><br><span class="line">        s2--;</span><br><span class="line">        PC++;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> {</span><br><span class="line">    <span class="comment">// 对信号量s1、s2赋初值</span></span><br><span class="line">    s1 = <span class="number">10</span>;</span><br><span class="line">    s2 = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//通过参数seed改变系统提供的种子值，从而可以使得每次调用rand函数生成的伪随机数序列不同</span></span><br><span class="line">    srand((<span class="type">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="comment">// 对生产者、消费者进程的PCB初始化</span></span><br><span class="line">    ProcessControlBlock producer_pcb = { <span class="string">"Producer"</span>, <span class="number">0</span>, <span class="string">""</span>, <span class="number">0</span> };</span><br><span class="line">    ProcessControlBlock consumer_pcb = { <span class="string">"Consumer"</span>, <span class="number">0</span>, <span class="string">""</span>, <span class="number">0</span> };</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 处理器调度程序：模拟交替运行生产者、消费者</span></span><br><span class="line">    <span class="keyword">while</span> (producer_pcb.status != <span class="number">3</span> &amp;&amp; consumer_pcb.status != <span class="number">3</span>) {</span><br><span class="line">        <span class="comment">// 保存当前进程的上下文，切换状态</span></span><br><span class="line">        <span class="keyword">if</span> (producer_pcb.status == <span class="number">0</span>) {</span><br><span class="line">            producer_pcb.status = <span class="number">1</span>; <span class="comment">// 进入就绪态</span></span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (consumer_pcb.status == <span class="number">0</span>) {</span><br><span class="line">            consumer_pcb.status = <span class="number">1</span>; <span class="comment">// 进入就绪态</span></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 处理器调度程序按随机数选择一个就绪进程占用处理器运行</span></span><br><span class="line">        <span class="keyword">while</span> (<span class="number">1</span>) {</span><br><span class="line">            <span class="type">int</span> random = rand() % <span class="number">2</span>; <span class="comment">// 随机数为0或1，分别表示运行生产者或消费者</span></span><br><span class="line">            <span class="keyword">if</span> (random == <span class="number">0</span> &amp;&amp; producer_pcb.status == <span class="number">1</span>) {</span><br><span class="line">                producer_pcb.status = <span class="number">0</span>; <span class="comment">// 进入运行态</span></span><br><span class="line">                producer();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (random == <span class="number">1</span> &amp;&amp; consumer_pcb.status == <span class="number">1</span>) {</span><br><span class="line">                consumer_pcb.status = <span class="number">0</span>; <span class="comment">// 进入运行态</span></span><br><span class="line">                consumer();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Program finished.\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -457,7 +453,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://myHLH.github.com/2023/11/11/hello-world/">http://myHLH.github.com/2023/11/11/hello-world/</a>
+                    <a href="http://myHLH.github.com/2023/11/11/%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E5%90%8C%E6%AD%A5%E6%9C%BA%E6%9E%84/">http://myHLH.github.com/2023/11/11/%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E5%90%8C%E6%AD%A5%E6%9C%BA%E6%9E%84/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,7 +566,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-11-11T11-49-56',
+        id: '2023-11-11T15-43-07',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -602,7 +598,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/11/FTP/">
+                <a href="/2023/11/11/%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9A%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/">
                     <div class="card-image">
                         
                         
@@ -636,16 +632,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/11/hello-world/">
+                <a href="/2023/11/11/%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -666,7 +662,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

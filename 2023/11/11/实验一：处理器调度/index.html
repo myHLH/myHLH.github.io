@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, myHLH的博客">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="myHLH的博客">
+    <meta name="description" content="实验一  处理器调度学号：3210611037 姓名：韩力恒
+一、实验目的与要求本实验目的是模拟在单处理器情况下处理器调度，加深了解处理器调度的工作。要求是从优先级调度和时间片轮转法调度算法中选取一个进行实验。
+本次实验我选择按优先数调度算">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | myHLH的博客</title>
+    <title>myHLH的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -336,12 +338,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -384,21 +386,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    1985-10-26
+                    2023-11-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -418,19 +420,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1 id="实验一-处理器调度"><a href="#实验一-处理器调度" class="headerlink" title="实验一  处理器调度"></a>实验一  处理器调度</h1><p><strong>学号：3210611037 姓名：韩力恒</strong></p>
+<h2 id="一、实验目的与要求"><a href="#一、实验目的与要求" class="headerlink" title="一、实验目的与要求"></a>一、实验目的与要求</h2><p>本实验目的是模拟在单处理器情况下处理器调度，加深了解处理器调度的工作。要求是从优先级调度和时间片轮转法调度算法中选取一个进行实验。</p>
+<p>本次实验我选择按优先数调度算法进行实验</p>
+<p>实验要求：<br>设计一个按优先数调度算法实现处理器调度的进程：<br>(1)假定系统有五个进程，每一个进程用一个进程控制块PCB来代表。进程控制块的格式为：进程名、时间、要求运行时间、优先数、状态。其中，进程名——作为进程的标识，假设五个进程的进程名分别是&nbsp;P1，P2，P3，P4，P5。指针——按优先数的大小把五个进程连成队列，用指针指出下一个进程的进程控制块首地址，最后一个进程中的指针为“0”。要求运行时间——假设进程需要运行的单位时间数。优先数——赋予进程的优先数，调度时总是选取优先数大的进程先执行。状态——可假设有两种状态，“就绪”状态和“结束“状态，五个进程的初始状态都为“就绪“状态，用“R”表示，当一个进程运行结束后，它的状态变为“结束”，用“E”表示。<br>(2)在每次运行你所设计的处理器调度程序之前，为每个进程任意确定它的“优先数”和“要求运行时间”。<br>(3)为了调度方便，把五个进程按给定的优先数从大到小连成队列，用一单元指出队首进程，用指针指出队列的连接情况。<br>(4)处理器调度总是选队首进程运行。采用动态改变优先数的办法，进程每运行一次优先数就减“1”。由于本实验是模拟处理器调度，所以，对被选中的进程并不实际的启动运行，而是执行:优先数-1要求运行时间-1来模拟进程的一次运行。提醒注意的是：在实际的系统中，当一个进程被选中运行时，必须恢复进程的现场，它占有处理器运行，直到出现等待事件或运行结束。在这里省去了这些工作。<br>(5)进程运行一次后，若要求运行时间≠0，则再将它加入队列(按优先数大小插入，且置队首标志)；若要求运行时间=0，则把它的状态修改为“结束”，且退出队列。<br>(6)若“就绪”状态的进程队列不为空，则重复上面(4)和(5)的步骤，直到所有进程都成为“结束”状态。<br>(7)在所设计的称序中应有显示或打印语句，能显示或打印每次被选中进程的进程名以及运行一次后进称对列的变化。<br>(8)为五个进程任意确定一组“优先数”和“要求运行时间”，启动所设计的处理器调度程序，显示或打印逐次被选中进程的进程名以及进程控制块的动态变化过程。</p>
+<h2 id="二、程序中使用的数据结构及符号说明"><a href="#二、程序中使用的数据结构及符号说明" class="headerlink" title="二、程序中使用的数据结构及符号说明"></a>二、程序中使用的数据结构及符号说明</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_PROCESS_NUM 5  <span class="comment">// 定义最大进程数为5</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> {</span></span><br><span class="line">    <span class="type">int</span> id;  <span class="comment">// 进程ID</span></span><br><span class="line">    <span class="type">int</span> time;  <span class="comment">// 要求运行时间</span></span><br><span class="line">    <span class="type">int</span> priority;  <span class="comment">// 优先级</span></span><br><span class="line">    <span class="type">char</span> state;  <span class="comment">// 状态：'R'表示运行，'E'表示结束</span></span><br><span class="line">} PCB;  <span class="comment">// 进程控制块</span></span><br><span class="line"></span><br><span class="line">PCB processQueue[MAX_PROCESS_NUM];  <span class="comment">// 进程队列</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="三、流程图"><a href="#三、流程图" class="headerlink" title="三、流程图"></a>三、流程图</h2><p><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689756973383-ff4b80b9-55bb-4cc0-adc0-8aaca2dc4e5e.png#averageHue=%231a1a1a&amp;id=zeEm1&amp;originHeight=822&amp;originWidth=699&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="></p>
+<h2 id="四、实验测试结果及结果分析"><a href="#四、实验测试结果及结果分析" class="headerlink" title="四、实验测试结果及结果分析"></a>四、实验测试结果及结果分析</h2><p>运行结果：<br><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689756973638-847bb079-38d1-4482-b4d9-eeb8189bce24.png#averageHue=%23201d1a&amp;id=uBVhZ&amp;originHeight=981&amp;originWidth=638&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="><br><img src="https://cdn.nlark.com/yuque/0/2023/png/35545012/1689756973968-a299749f-9a0a-41b0-b9e4-1ab7e40bbd0e.png#averageHue=%23161311&amp;id=AK8un&amp;originHeight=763&amp;originWidth=643&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="></p>
+<p>结果分析：<br>用户输入每个进程的信息后，将其存入进程队列中。在每次循环中，将队列按照优先级由大到小排序，然后查找优先级最高的进程，并运行它。如果该进程的运行时间为0，则将其状态改为“E”，表示该进程已结束。当队列中所有进程都结束时，程序结束运行。<br>    在代码中使用了结构体来表示每个进程的信息，其中“state”表示进程的状态。“qsort”函数用来排序进程队列，排序的规则是优先级降序，优先级相同时按照ID升序。在运行进程时，循环查找队列中状态为“R”的进程并运行。检查所有进程是否都已结束可以使用一个flag变量来判断，如果所有进程都已结束，则将flag设为1，跳出循环，程序结束。</p>
+<h2 id="五、实验小结"><a href="#五、实验小结" class="headerlink" title="五、实验小结"></a>五、实验小结</h2><p>本次实验要求使用C语言编写算法来模拟在单处理器情况下的处理器调度。本次实验我选择设计一个按优先数调度算法实现处理器调度的进程。程序执行过程中，会打印每次运行后进程控制块的动态变化过程。本次实验让我更深入地理解了优先调度算法的底层逻辑，同时也加强了我对C语言的编程能力。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_PROCESS_NUM 5  <span class="comment">// 定义最大进程数为5</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> {</span></span><br><span class="line">    <span class="type">int</span> id;  <span class="comment">// 进程ID</span></span><br><span class="line">    <span class="type">int</span> time;  <span class="comment">// 要求运行时间</span></span><br><span class="line">    <span class="type">int</span> priority;  <span class="comment">// 优先级</span></span><br><span class="line">    <span class="type">char</span> state;  <span class="comment">// 状态：'R'表示运行，'E'表示结束</span></span><br><span class="line">} PCB;  <span class="comment">// 进程控制块</span></span><br><span class="line"></span><br><span class="line">PCB processQueue[MAX_PROCESS_NUM];  <span class="comment">// 进程队列</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">cmp</span><span class="params">(<span class="type">const</span> <span class="type">void</span>* a, <span class="type">const</span> <span class="type">void</span>* b)</span> {</span><br><span class="line">    <span class="comment">// 按照优先级降序排序，优先级相同时按照ID升序排序</span></span><br><span class="line">    PCB* aa = (PCB*)a;</span><br><span class="line">    PCB* bb = (PCB*)b;</span><br><span class="line">    <span class="keyword">if</span> (aa-&gt;priority == bb-&gt;priority) <span class="keyword">return</span> aa-&gt;id - bb-&gt;id;</span><br><span class="line">    <span class="keyword">return</span> bb-&gt;priority - aa-&gt;priority;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> {</span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>; <span class="comment">//计算运行次数</span></span><br><span class="line">    <span class="comment">// 用户输入每个进程的ID、要求运行时间和优先级</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAX_PROCESS_NUM; i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入进程 %d 的ID、要求运行时间和优先级，中间用空格隔开："</span>, i + <span class="number">1</span>);</span><br><span class="line">        scanf_s(<span class="string">"%d %d %d"</span>, &amp;processQueue[i].id, &amp;processQueue[i].time, &amp;processQueue[i].priority);</span><br><span class="line">        processQueue[i].state = <span class="string">'R'</span>;  <span class="comment">// 初始状态为运行</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) {</span><br><span class="line">        <span class="comment">// 按照优先级由大到小排序</span></span><br><span class="line">        qsort(processQueue, MAX_PROCESS_NUM, <span class="keyword">sizeof</span>(PCB), cmp);</span><br><span class="line">        <span class="comment">// 输出当前进程队列</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"第%d次运行后的进程队列：\n"</span>, count);</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAX_PROCESS_NUM; i++) {</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"进程%d: 运行时间：%d, 优先级：%d, 状态：%c\n"</span>, processQueue[i].id, processQueue[i].time, processQueue[i].priority, processQueue[i].state);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 查找最高优先级的进程并运行</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAX_PROCESS_NUM; i++) {</span><br><span class="line">            <span class="keyword">if</span> (processQueue[i].state == <span class="string">'R'</span>) {</span><br><span class="line">                processQueue[i].time--;</span><br><span class="line">                processQueue[i].priority--;</span><br><span class="line">                <span class="keyword">if</span> (processQueue[i].time == <span class="number">0</span>) {</span><br><span class="line">                    processQueue[i].state = <span class="string">'E'</span>;  <span class="comment">// 进程结束</span></span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 检查所有进程是否都已结束，如果是则跳出循环</span></span><br><span class="line">        <span class="type">int</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAX_PROCESS_NUM; i++) {</span><br><span class="line">            <span class="keyword">if</span> (processQueue[i].state == <span class="string">'R'</span>) {</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (flag) <span class="keyword">break</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出最终的进程队列</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"最终进程队列：\n第%d次运行后的进程队列\n"</span>,count);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; MAX_PROCESS_NUM; i++) {</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"进程%d: 运行时间：%d, 优先级：%d, 状态：%c\n"</span>, processQueue[i].id, processQueue[i].time, processQueue[i].priority, processQueue[i].state);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -457,7 +456,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://myHLH.github.com/2023/11/11/hello-world/">http://myHLH.github.com/2023/11/11/hello-world/</a>
+                    <a href="http://myHLH.github.com/2023/11/11/%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6/">http://myHLH.github.com/2023/11/11/%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E5%A4%84%E7%90%86%E5%99%A8%E8%B0%83%E5%BA%A6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,7 +569,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-11-11T11-49-56',
+        id: '2023-11-11T15-42-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -602,7 +601,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/11/FTP/">
+                <a href="/2023/11/11/%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E5%90%8C%E6%AD%A5%E6%9C%BA%E6%9E%84/">
                     <div class="card-image">
                         
                         
@@ -636,16 +635,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/11/hello-world/">
+                <a href="/2023/11/11/FTP/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -666,7 +665,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
