@@ -4,8 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, myHLH的博客">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="myHLH的博客">
+    <meta name="description" content="FTPFTP协议：文件传输协议（File Transfer Protocol）
+
+协议定义了一个在远程计算机系统和本地计算机系统之间传输文件的一个标准
+FTP运行在OSI模型的应用层，并利用传输协议TCP在不同的主机之间提供可靠的数据传输
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | myHLH的博客</title>
+    <title>myHLH的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -336,12 +340,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -384,21 +388,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    1985-10-26
+                    2023-05-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    75
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    10 分
                 </div>
                 
 
@@ -418,19 +422,225 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h1><p>FTP协议：文件传输协议（File Transfer Protocol）</p>
+<ul>
+<li>协议定义了一个在远程计算机系统和本地计算机系统之间传输文件的一个标准</li>
+<li>FTP运行在OSI模型的应用层，并利用传输协议TCP在不同的主机之间提供可靠的数据传输</li>
+<li>FTP 在文件传输中还支持断点续传功能，可以大幅度减少CPU网络带宽的开销</li>
+</ul>
+<p>FTP模型</p>
+<ul>
+<li>用户接口：提供一个用户接口并使用客户端协议解释器的服务</li>
+<li>客户端协议解释器：向远程服务器发送命令 并建立客户数据传输过程</li>
+<li>服务端协议解释器：响应客户协议机发出的命令并驱动服务端数据传输过程</li>
+<li>客户端数据传输协议：负责完成和服务器数据传输过程及客户端本地文件系统的通信</li>
+<li>服务端数据传输协议：负责完成和客户数据过程及服务器端文件系统的通信</li>
+</ul>
+<p>控制连接（端口号21）</p>
+<ul>
+<li>主要用来传送在实际通信过程中需要执行的FTP命令以及命令的响应</li>
+<li>只需要很小的网络带宽</li>
+<li>FTP服务端监听21端口号来等待控制连接建立</li>
+<li>建立控制连接后，还需要验证客户身份，决定是否建立数据连接</li>
+<li>当需要目录列表，传输文件时，才建立数据连接，并且每次客户端都是用不同的端口号来建立数据连接。数据传输完毕，就中断这条临时的数据连接</li>
+<li>在FTP连接期间，控制连接始终保持通常的连接状态。在数据连接存在期间，控制连接必须存在；一旦控制连接断开，数据连接会自动关闭。</li>
+</ul>
+<p>数据连接（端口号20）</p>
+<ul>
+<li>FTP服务端监听20端口来等待数据连接</li>
+<li>数据连接依赖于控制连接</li>
+<li>建立方式（主动被动都是相对服务器而言）</li>
+</ul>
+<p>主动模式</p>
+<ul>
+<li>通过三次握手，建立控制连接；客户端的源端口是高位随机端口，目标端口是21端口</li>
+<li>控制连接建立后，客户端进行身份验证，协商数据连接采用主动模式；随后客户端会向FTP服务器发送Port报文，表明自己监听的IP+端口，并等待FTP服务器（20端口）向自己监听的IP+端口发起数据连接请求。</li>
+<li>服务端发起数据连接请求，建立数据连接</li>
+</ul>
+<p>被动模式</p>
+<ul>
+<li>通过三次握手，建立控制连接；客户端的源端口是高位随机端口，目标端口是21端口；</li>
+<li>控制连接建立后，客户端进行身份验证，协商数据连接采用被动模式；随后客户端会向服务器发送PASV报文，表示我们用被动模式</li>
+<li>服务端收到PASV报文，于是向客户端发送Port报文，表明自己监听的IP+端口</li>
+<li>客户端发起数据连接请求，建立数据连接</li>
+</ul>
+<h2 id="VSFTPD服务介绍"><a href="#VSFTPD服务介绍" class="headerlink" title="VSFTPD服务介绍"></a>VSFTPD服务介绍</h2><ul>
+<li>服务包：vsftpd</li>
+<li>服务类型：由Systemd启动的守护进程</li>
+<li>配置单元： /usr/lib/systemd/system/vsftpd.service</li>
+<li>守护进程： /usr/sbin/vsftpd</li>
+<li>端口： 21(ftp) , 20(ftp‐data)</li>
+<li>主配置文件： /etc/vsftpd/vsftpd.conf</li>
+<li>用户访问控制配置文件： /etc/vsftpd/ftpusers /etc/vsftpd/user_list</li>
+<li>日志文件： /etc/logrotate.d/vsftpd</li>
+<li>配置文件参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>listen=NO</td>
+<td>是否以独立运行的方式监听服务</td>
+</tr>
+<tr>
+<td>listen_address=ip地址</td>
+<td>设置要监听的IP地址</td>
+</tr>
+<tr>
+<td>listen_port=21</td>
+<td>设置FTP服务的监听端口</td>
+</tr>
+<tr>
+<td>download_enable=YES</td>
+<td>是否允许下载文件</td>
+</tr>
+<tr>
+<td>userlist_enable=YES</td>
+<td>设置用户列表为”允许”</td>
+</tr>
+<tr>
+<td>userlist_deny=YES</td>
+<td>设置用户列表为”禁止”</td>
+</tr>
+<tr>
+<td>max_clients=0</td>
+<td>最大客户端连接数，0为不限制</td>
+</tr>
+<tr>
+<td>max_per_ip=0</td>
+<td>同一IP地址的最大连接数，0为不限制</td>
+</tr>
+<tr>
+<td>anonymous_enable=YES</td>
+<td>是否允许匿名用户访问</td>
+</tr>
+<tr>
+<td>anon_upload_enable=YES</td>
+<td>是否允许匿名用户上传文件</td>
+</tr>
+<tr>
+<td>anon_umask</td>
+<td>匿名用户上传文件的umask</td>
+</tr>
+<tr>
+<td>anon_root=/var/ftp</td>
+<td>匿名用户的ftp根目录</td>
+</tr>
+<tr>
+<td>anon_mkdir_write_enable=YES</td>
+<td>是否允许匿名用户创建目录</td>
+</tr>
+<tr>
+<td>anon_other_write_enable=YES</td>
+<td>是否开放匿名用户的其他写入权限（重命名、删除等）</td>
+</tr>
+<tr>
+<td>anon_max_rate=0</td>
+<td>匿名用户的最大传输速率，0为不限制</td>
+</tr>
+<tr>
+<td>local_enable=yes</td>
+<td>是否允许本地用户登录</td>
+</tr>
+<tr>
+<td>local_umask=022</td>
+<td>本地用户上传文件的umask值</td>
+</tr>
+<tr>
+<td>local_root=/vat/ftp</td>
+<td>本地用户的ftp根目录</td>
+</tr>
+<tr>
+<td>chroot_local_user=YES</td>
+<td>是否将用户权限禁锢在ftp目录，以确保安全</td>
+</tr>
+<tr>
+<td>local_max_rate=0</td>
+<td>本地用户的最大传输速率，0为不限制</td>
+</tr>
+</tbody></table>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>安装vsftp</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhoust ~]<span class="comment">#yum -y install vsftpd</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>准备分发的文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhoust ~]<span class="comment">#touch /var/ftp/abd.txt</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>启动服务</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment">#systemctl start vsftpd</span></span><br><span class="line">[root@localhost ~]<span class="comment">#systemctl enable vsftpd</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>关闭防火墙</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment">#systemctl stop firewalld</span></span><br><span class="line">[root@localhost ~]<span class="comment">#setenforce 0</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="客户端工具"><a href="#客户端工具" class="headerlink" title="客户端工具"></a>客户端工具</h2><h3 id="Linux中"><a href="#Linux中" class="headerlink" title="Linux中"></a>Linux中</h3><h4 id="1-使用ftp工具"><a href="#1-使用ftp工具" class="headerlink" title="1.使用ftp工具"></a>1.使用ftp工具</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># yum install ftp -y</span></span><br><span class="line">[root@localhost ~]<span class="comment"># ftp &lt;IP地址&gt;</span></span><br><span class="line">Name (192.168.175.10:root):anonymous</span><br><span class="line">password:直接回车</span><br></pre></td></tr></tbody></table></figure>
+
+<p>ftp工具一定要输入用户名和密码，匿名用户登陆用户名写anonymous，密码直接回车，登陆成功或者失败都会给出提示</p>
+<h4 id="2-使用lftp工具"><a href="#2-使用lftp工具" class="headerlink" title="2.使用lftp工具"></a>2.使用lftp工具</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># yum install lftp -y</span></span><br><span class="line">[root@localhost ~]<span class="comment"># lftp &lt;IP地址&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>lftp工具不需要输入用户名和密码直接登陆，不会直接给出登陆成功或者失败的提示，需要输入ls工具才能知道是否连接成功，优点在于连接更加方便</p>
+<h3 id="Windows中"><a href="#Windows中" class="headerlink" title="Windows中"></a>Windows中</h3><h4 id="1-在浏览器中访问"><a href="#1-在浏览器中访问" class="headerlink" title="1.在浏览器中访问"></a>1.在浏览器中访问</h4><p>可以在浏览器、运行窗口或者资源管理器中输入 <a href="ftp://ip地址/">ftp://IP地址/</a> ，这样访问的是ftp的根位置，如果需要访问相关目录可以输入 <a href="ftp://ip地址/%E7%9B%AE%E5%BD%95/%E6%96%87%E4%BB%B6%E5%90%8D">ftp://IP地址/目录/文件名</a></p>
+<h4 id="2-在控制管理器中访问"><a href="#2-在控制管理器中访问" class="headerlink" title="2.在控制管理器中访问"></a>2.在控制管理器中访问</h4><p>在cmd窗口中，输入命令 ftp &lt;IP地址&gt; 即可访问</p>
+<p>需要注意的是直接访问ftp服务器的IP地址时访问的根位置目录是 /var/ftp，如果需要访问pub里的test可以访问 <a href="ftp://192.168.80.129/pub/test">ftp://192.168.80.129/pub/test</a> 。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="案例1，匿名用户访问（默认开启）"><a href="#案例1，匿名用户访问（默认开启）" class="headerlink" title="案例1，匿名用户访问（默认开启）"></a>案例1，匿名用户访问（默认开启）</h3><p>修改配置文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vim /etc/vsftpd/vsftpd.conf</span></span><br><span class="line">anonymous_enable=YES</span><br><span class="line">anon_umask=022</span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line">local_enable=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">local_umask=022</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">xferlog_std_format=YES</span><br><span class="line">listen=NO</span><br><span class="line">listen_ipv6=YES</span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line">userlist_enable=YES</span><br><span class="line">tcp_wrappers=YES</span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl restart vsftpd #重启配置</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>新版本的vsftp针对用户安全性进行了升级，普通用户无法在/var/ftp下新建文件，如果直接添加目录的w权限会触发安全判断问题，因为/var/ftp目录下的文件只能是默认的755权限，普通用户没有w权限，而且/var/ftp目录的属主必须是root，如果修改所属主或者权限则会触发完全问题。欲使普通用户可以在ftp中上传文件，就在/var/ftp下新建一个用于普通用户上传文件的目录，比如/var/ftp/pub，将/var/ftp/pub目录的属主和属组改成ftp，并且添加w权限</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chown</span> ftp.ftp /var/ftp/pub</span><br><span class="line"><span class="built_in">chmod</span> 777 /var/ftp/pub</span><br></pre></td></tr></tbody></table></figure>
+
+<p>现在就可以在里面写文件了</p>
+<h3 id="案例2，本地用户访问"><a href="#案例2，本地用户访问" class="headerlink" title="案例2，本地用户访问"></a>案例2，本地用户访问</h3><p>这些用户就是Linux下的用户，使用本地用户登陆，登陆成功时位置在该用户的家目录。如：用户han登陆时，输入han在Linux下的密码，登陆成功后位置在/home，han可以在该目录下创建或者删除文件</p>
+<p>修改配置文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vi /etc/vsftpd/vsftpd.conf</span></span><br><span class="line">anonymous_enable=NO <span class="comment">#不允许匿名用户访问</span></span><br><span class="line">local_enable=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">local_umask=022</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">xferlog_std_format=YES</span><br><span class="line">listen=NO</span><br><span class="line">listen_ipv6=YES</span><br><span class="line">pam_service_name=vsftpd</span><br><span class="line">userlist_enable=YES</span><br><span class="line">tcp_wrappers=YES</span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl restart vsftpd #重启配置</span></span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl enable vsftpd</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>本地用户登陆时，密码使用的是该用户在Linux下登陆时的密码，而不是ftp的密码</p>
+<p>注意：出现在/etc/vsftpd/ftpusers /etc/vsftpd/user_list这两个文件中的内容将会被定义为黑名单</p>
+<h3 id="案例3，虚拟用户访问"><a href="#案例3，虚拟用户访问" class="headerlink" title="案例3，虚拟用户访问"></a>案例3，虚拟用户访问</h3><p>只用于登陆ftp的用户，不是Linux下的用户。</p>
+<ol>
+<li>创建用于进行FTP认证的用户数据库文件，其中奇数行为用户名，偶数行为密码。</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># cd /etc/vsftpd/</span></span><br><span class="line">[root@localhost vsftpd]<span class="comment"># vim vuser.list #创建文件，稍后虚拟用户信息从这个文件读取</span></span><br><span class="line">eagle <span class="comment">#用户名</span></span><br><span class="line">centos <span class="comment">#密码</span></span><br><span class="line">cisco <span class="comment">#用户名</span></span><br><span class="line">centos <span class="comment">#密码</span></span><br><span class="line">huawei <span class="comment">#用户名</span></span><br><span class="line">centos <span class="comment">#密码</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>使用db_load命令用哈希（hash）算法将原始的明文信息文件转换成数据库文件。</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># db_load -T -t hash -f vuser.list vuser.db</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>由于文件vuser.list中含有密码等敏感信息，所以使用加密算法加密。转换完后新的文件vuser.db就是用户数据库，里面是加密后的信息。</p>
+<p>查看vuser.db的文件类型：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># file vuser.db</span></span><br><span class="line">vuser.db: Berkeley DB (Hash, version 9, native byte-order)</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="3">
+<li>降低数据库文件的权限（避免其他人看到数据库文件的内容）。加强数据库vuser.db的安全性，防止破解</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># chmod 600 vuser.db</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="4">
+<li>把原始的明文信息文件删除。</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># rm -f vuser.list</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="5">
+<li>创建一个本地用户，用来做虚拟用户在本地的代理，为了安全起见，禁止这个本地用户登录。</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># useradd -d /var/ftproot -s /sbin/nologin virtual</span></span><br><span class="line"><span class="comment">#-d 指定用户的家目录为/var/ftproot -s 指定为不能登陆的用户</span></span><br><span class="line">[root@localhost vsftpd]<span class="comment"># ls -ld /var/ftproot/</span></span><br><span class="line">drwx------. 2 virtual virtual 59 8月 10 23:04 /var/ftproot/</span><br><span class="line">[root@localhost vsftpd]<span class="comment"># chmod -Rf 755 /var/ftproot/</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>新建一个用于虚拟用户认证的PAM文件vsftpd.vu，利用pam模块（linux内核的一个认证模块）做一个认证</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># vi /etc/pam.d/vsftpd.vu</span></span><br><span class="line">auth required pam_userdb.so db=/etc/vsftpd/vuser</span><br><span class="line">account required pam_userdb.so db=/etc/vsftpd/vuser</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="7">
+<li>配置文件</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># cat /etc/vsftpd/vsftpd.conf</span></span><br><span class="line">anonymous_enable=NO</span><br><span class="line">local_enable=YES</span><br><span class="line">guest_enable=YES</span><br><span class="line">guest_username=virtual <span class="comment">#名为virtual的用户做代理</span></span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">local_umask=022</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">xferlog_std_format=YES</span><br><span class="line">listen=NO</span><br><span class="line">listen_ipv6=YES</span><br><span class="line">pam_service_name=vsftpd.vu <span class="comment">#记得修改这里为我们自己的认证文件</span></span><br><span class="line">userlist_enable=YES</span><br><span class="line">tcp_wrappers=YES</span><br><span class="line">[root@localhost vsftpd]<span class="comment"># systemctl restart vsftpd</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>这时用户创建完毕，可以登陆，但是不能写文件，需要给权限</p>
+<ol start="8">
+<li>如果想要针对不同的用户设置不同的权限</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost vsftpd]<span class="comment"># mkdir /etc/vsftpd/vusers_dir/ #创建一个目录用于存放各个虚拟用户的配置文件</span></span><br><span class="line">[root@localhost vsftpd]<span class="comment"># cd /etc/vsftpd/vusers_dir/</span></span><br><span class="line">[root@localhost vusers_dir]<span class="comment"># touch huawei #创建huawei的配置文件，如果不给任何权限，则默认为主配置文件</span></span><br><span class="line">[root@localhost vusers_dir]<span class="comment"># vim cisco #创建cisco的配置文件，并修改配置文件</span></span><br><span class="line">anon_upload_enable=YES</span><br><span class="line">anon_mkdir_write_enable=YES</span><br><span class="line">anon_other_write_enable=YES</span><br><span class="line"><span class="comment">#与配置匿名用户权限一样</span></span><br><span class="line">[root@localhost vusers_dir]<span class="comment"># vi /etc/vsftpd/vsftpd.conf</span></span><br><span class="line">anonymous_enable=NO</span><br><span class="line">local_enable=YES</span><br><span class="line">guest_enable=YES</span><br><span class="line">guest_username=virtual</span><br><span class="line">allow_writeable_chroot=YES</span><br><span class="line">write_enable=YES</span><br><span class="line">local_umask=022</span><br><span class="line">dirmessage_enable=YES</span><br><span class="line">xferlog_enable=YES</span><br><span class="line">connect_from_port_20=YES</span><br><span class="line">xferlog_std_format=YES</span><br><span class="line">listen=NO</span><br><span class="line">listen_ipv6=YES</span><br><span class="line">pam_service_name=vsftpd.vu</span><br><span class="line">userlist_enable=YES</span><br><span class="line">tcp_wrappers=YES</span><br><span class="line">user_config_dir=/etc/vsftpd/vusers_dir <span class="comment">#在主配置文件中加上这一行，告诉主配置文件我们这里还有配置</span></span><br><span class="line">[root@localhost vusers_dir]<span class="comment"># systemctl restart vsftpd</span></span><br><span class="line">配置完后，huawei没权限，cisco有权限</span><br></pre></td></tr></tbody></table></figure>
+
 
                 
             </div>
@@ -457,7 +667,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://myHLH.github.com/2023/11/11/hello-world/">http://myHLH.github.com/2023/11/11/hello-world/</a>
+                    <a href="http://myHLH.github.com/2023/11/11/FTP/">http://myHLH.github.com/2023/11/11/FTP/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,7 +780,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-11-11T11-49-56',
+        id: '2023-11-11T15-34-36',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -598,9 +808,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/11/11/FTP/">
                     <div class="card-image">
@@ -618,9 +829,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -629,6 +840,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -636,7 +848,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2023/11/11/hello-world/">
@@ -666,7 +878,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
